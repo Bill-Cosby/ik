@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1461786027 source:c:\users\dhartman0356\desktop\ik\main.cpp
+	"bodyStructure.hpp"
+
+1461786108 source:c:\users\dhartman0356\desktop\ik\basicobjects.cpp
+	"basicObjects.hpp"
+
+1461785698 c:\users\dhartman0356\desktop\ik\basicobjects.hpp
+	<vector>
+	<math.h>
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1461784973 source:c:\users\dhartman0356\desktop\ik\bodystructure.cpp
+	"bodyStructure.hpp"
+
+1461785251 c:\users\dhartman0356\desktop\ik\bodystructure.hpp
+	"node.hpp"
+
+1461785231 c:\users\dhartman0356\desktop\ik\node.hpp
+	"basicObjects.hpp"
+
+1461786018 source:c:\users\dhartman0356\desktop\ik\node.cpp
+	"node.hpp"
+
