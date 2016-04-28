@@ -32,7 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="basicObjects.cpp" />
+		<Unit filename="basicObjects.hpp" />
+		<Unit filename="bodyStructure.cpp" />
+		<Unit filename="bodyStructure.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="node.cpp" />
+		<Unit filename="node.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

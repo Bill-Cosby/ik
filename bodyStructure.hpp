@@ -10,7 +10,7 @@ private:
 public:
     BODY_STRUCTURE(coord pos);
 
-    void update(sf::RenderWindow &window){for (node* tempNode : joints){tempNode->update(window);}}
+    void update(sf::RenderWindow &window,coord goal);
 };
 
 #endif // BODYSTRUCTURE_HPP_INCLUDED
