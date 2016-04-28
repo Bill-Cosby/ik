@@ -37,6 +37,8 @@
 		<Unit filename="bodyStructure.cpp" />
 		<Unit filename="bodyStructure.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="math/quaternion.cpp" />
+		<Unit filename="math/quaternion.h" />
 		<Unit filename="node.cpp" />
 		<Unit filename="node.hpp" />
 		<Extensions>
