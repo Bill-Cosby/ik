@@ -42,9 +42,9 @@ vector<double> NewPoint(vector<double> mypoint, double theta, vector<double> eul
     eulerVector.z=eulervector[2];
     double eulerLength=pow(pow(eulerVector.x,2)+pow(eulerVector.y,2)+pow(eulerVector.z,2),0.5);
 
-    euler.x=euler.x/eulerLength;
-    euler.y=euler.y/eulerLength;
-    euler.z=euler.z/eulerLength;
+    eulerVector.x=eulerVector.x/eulerLength;
+    eulerVector.y=eulerVector.y/eulerLength;
+    eulerVector.z=eulerVector.z/eulerLength;
 
     Quaternion myPoint;
     myPoint.a=0;

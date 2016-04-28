@@ -17,8 +17,8 @@ int main()
 
 
     vector<double> eulervector;
-    eulervector.push_back(.5);
     eulervector.push_back(1);
+    eulervector.push_back(0);
     eulervector.push_back(0);
 
     sf::CircleShape circ;
@@ -41,7 +41,8 @@ int main()
             }
         }
         std::cout << newPoint[2] << std::endl;
-        circ.setRadius(test[2]+newPoint[2]);
+        circ.setRadius(20+test[2]+newPoint[2]);
+        circ.setOrigin(circ.getPosition().x+circ.getRadius(),circ.getPosition().y+circ.getRadius());
         circ.setPosition(newPoint[0]+1,newPoint[1]+1);
 
 

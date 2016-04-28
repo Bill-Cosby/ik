@@ -23,7 +23,7 @@
 1461786018 source:c:\users\dhartman0356\desktop\ik\node.cpp
 	"node.hpp"
 
-1461869078 source:c:\ik\main.cpp
+1461870674 source:c:\ik\main.cpp
 	"bodyStructure.hpp"
 
 1461868715 c:\ik\bodystructure.hpp
@@ -52,7 +52,7 @@
 	<math.h>
 	<vector>
 
-1461868715 source:c:\ik\math\quaternion.cpp
+1461870414 source:c:\ik\math\quaternion.cpp
 	<iostream>
 	"quaternion.h"
 
