@@ -7,26 +7,29 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800,600), "IK");
     sf::Event event;
 
-    BODY_STRUCTURE me(coord(300,300));
+    const double pi = 3.14159;
+    std::vector<double> test;
+    test.push_back(1);
+    test.push_back(0);
+    test.push_back(0);
 
-    coord goal;
 
-    sf::CircleShape circ;
-    circ.setFillColor(sf::Color::Red);
-    circ.setRadius(10);
+    vector<double> eulervector;
+    eulervector.push_back(0);
+    eulervector.push_back(1);
+    eulervector.push_back(0);
 
     while (window.isOpen()){
     circ.setPosition(goal.x,goal.y);
+
+        vector<double> newPoint=NewPoint(test,pi/2,eulervector);
+
         while (window.pollEvent(event)){
             if (event.type == sf::Event::Closed){
                 window.close();
             }
         }
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))goal.y-=.1;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))goal.y+=.1;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))goal.x-=.1;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))goal.x+=.1;
 
 
 

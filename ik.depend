@@ -23,27 +23,32 @@
 1461786018 source:c:\users\dhartman0356\desktop\ik\node.cpp
 	"node.hpp"
 
-1461806080 source:c:\ik\main.cpp
+1461856765 source:c:\ik\main.cpp
 	"bodyStructure.hpp"
 
-1461804629 c:\ik\bodystructure.hpp
+1461856765 c:\ik\bodystructure.hpp
 	"node.hpp"
 
-1461806864 c:\ik\node.hpp
+1461856765 c:\ik\node.hpp
 	"basicObjects.hpp"
 
-1461806094 c:\ik\basicobjects.hpp
+1461860896 c:\ik\basicobjects.hpp
 	<vector>
 	<math.h>
 	<SFML/Graphics.hpp>
 	<iostream>
+	"math/quaternion.h"
 
-1461806948 source:c:\ik\basicobjects.cpp
+1461856765 source:c:\ik\basicobjects.cpp
 	"basicObjects.hpp"
 
-1461807032 source:c:\ik\bodystructure.cpp
+1461856765 source:c:\ik\bodystructure.cpp
 	"bodyStructure.hpp"
 
-1461807484 source:c:\ik\node.cpp
+1461856765 source:c:\ik\node.cpp
 	"node.hpp"
+
+1461860788 c:\ik\math\quaternion.h
+	<math.h>
+	<vector>
 

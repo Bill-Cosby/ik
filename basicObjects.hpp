@@ -4,6 +4,8 @@
 #include <math.h>
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "math/quaternion.h"
+
 
 class coord
 {

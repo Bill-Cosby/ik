@@ -54,7 +54,7 @@ void node::calculateNewAngle(coord target)
     coord temp = POS;
     sf::Vector2f vecA(getDistance(POS,target),getTheta(POS,target));
 
-    sf::Vector2f vecB(distanceFromParent,currentAngle*(3.14159/180)+1.5708);
+    sf::Vector2f vecB(distanceFromParent,(currentAngle+90)*(3.14159/180));
 
     float dotProduct = vecB.x * vecA.x * cos(vecB.y+vecA.y)*.01;
 
@@ -63,4 +63,5 @@ void node::calculateNewAngle(coord target)
     POS.setRotatedPos(parent->POS,dotProduct+currentAngle,distanceFromParent,false);
 
     currentAngle += dotProduct;
+
 }
