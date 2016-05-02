@@ -1,13 +1,9 @@
 #include <math.h>
 #include <vector>
 
-class Quaternion
+struct Quaternion
 {
-    public:
-    double a;
-    double x;
-    double y;
-    double z;
+    double a,x,y,z;
 };
 
 Quaternion product(Quaternion u,Quaternion v);

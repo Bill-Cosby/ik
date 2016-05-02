@@ -29,3 +29,69 @@ float getTheta(coord p1, coord p2)
 {
     return atan2((p1.y-p2.y),(p1.x-p2.x));
 }
+
+std::vector<Vector3> cube()
+{
+    std::vector<Vector3> temp;
+    temp.push_back(Vector3(0,0,0));
+    temp.push_back(Vector3(1,0,0));
+    temp.push_back(Vector3(1,0,1));
+    temp.push_back(Vector3(0,0,1));
+    temp.push_back(Vector3(0,1,0));
+    temp.push_back(Vector3(1,1,0));
+    temp.push_back(Vector3(1,1,1));
+    temp.push_back(Vector3(0,1,1));
+    return temp;
+}
+
+Cube::Cube()
+{
+    points.push_back(Vert(0,0,0));
+    points[0].id = "0";
+    points.push_back(Vert(1,0,0));
+    points[1].id = "1";
+    points.push_back(Vert(1,0,1));
+    points[2].id = "2";
+    points.push_back(Vert(0,0,1));
+    points[3].id = "3";
+    points.push_back(Vert(0,1,0));
+    points[4].id = "4";
+    points.push_back(Vert(1,1,0));
+    points[5].id = "5";
+    points.push_back(Vert(1,1,1));
+    points[6].id = "6";
+    points.push_back(Vert(0,1,1));
+    points[7].id = "7";
+
+    points[0].connectedTo.push_back(&points[1]);
+    points[0].connectedTo.push_back(&points[3]);
+    points[0].connectedTo.push_back(&points[4]);
+
+    points[1].connectedTo.push_back(&points[0]);
+    points[1].connectedTo.push_back(&points[2]);
+    points[1].connectedTo.push_back(&points[5]);
+
+    points[2].connectedTo.push_back(&points[1]);
+    points[2].connectedTo.push_back(&points[3]);
+    points[2].connectedTo.push_back(&points[6]);
+
+    points[3].connectedTo.push_back(&points[2]);
+    points[3].connectedTo.push_back(&points[0]);
+    points[3].connectedTo.push_back(&points[7]);
+
+    points[4].connectedTo.push_back(&points[0]);
+    points[4].connectedTo.push_back(&points[5]);
+    points[4].connectedTo.push_back(&points[7]);
+
+    points[5].connectedTo.push_back(&points[1]);
+    points[5].connectedTo.push_back(&points[4]);
+    points[5].connectedTo.push_back(&points[6]);
+
+    points[6].connectedTo.push_back(&points[5]);
+    points[6].connectedTo.push_back(&points[7]);
+    points[6].connectedTo.push_back(&points[2]);
+
+    points[7].connectedTo.push_back(&points[6]);
+    points[7].connectedTo.push_back(&points[4]);
+    points[7].connectedTo.push_back(&points[3]);
+}
