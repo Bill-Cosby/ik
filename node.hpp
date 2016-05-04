@@ -14,8 +14,8 @@ class node
 public:
     node* child = nullptr;
     float currentAngle = 0;
-    coord POS;
-    node(coord pos, float mini, float maxi);
+    Vector3 POS;
+    node(Vector3 pos, float mini, float maxi);
     node(node* parent, float mini, float maxi, float dist);
     void update(sf::RenderWindow &window,coord goal);
     void update(sf::RenderWindow &window);

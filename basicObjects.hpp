@@ -32,6 +32,8 @@ public:
 
     bool operator == (Vector3 t){return t.x == x and t.y == y and t.z == z;}
     bool operator != (Vector3 t){return !(t == *this);}
+    void operator -= (Vector3 t){x-=t.x;y-=t.y;z-=t.z;}
+    void operator += (Vector3 t){x+=t.x;y+=t.y;z+=t.z;}
 };
 
 class Vert

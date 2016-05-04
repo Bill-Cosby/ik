@@ -22,9 +22,9 @@ coord coord::setRotatedPos(coord par, float ang, float dist, bool inradians)
 Vector3 crossProduct(Vector3 parent, Vector3 child)
 {
     Vector3 newVec;
-    newVec.x = (child.y * parent.z - child.z * parent.y) + child.x;
-    newVec.y = (child.z * parent.x - child.x * parent.z) + child.y;
-    newVec.z = (child.x * parent.y - child.y * parent.x) + child.z;
+    newVec.x = (child.y * parent.z - child.z * parent.y);
+    newVec.y = (child.z * parent.x - child.x * parent.z);
+    newVec.z = (child.x * parent.y - child.y * parent.x);
     return newVec;
 }
 

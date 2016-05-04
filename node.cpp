@@ -60,7 +60,7 @@ void node::calculateNewAngle(coord target)
 
     if (abs(dotProduct) <.01)return;
 
-    POS.setRotatedPos(parent->POS,dotProduct+currentAngle,distanceFromParent,false);
+     POS.setRotatedPos(parent->POS,dotProduct+currentAngle,distanceFromParent,false);
 
     currentAngle += dotProduct;
 

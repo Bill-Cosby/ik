@@ -128,7 +128,11 @@ int main()
 
         std::cout << crossProductToUse.x << "," << crossProductToUse.y << "," << crossProductToUse.z << std::endl;
 
-        endEffector = NewPoint(endEffector,.0001,Vector3(eulervector[0],eulervector[1],eulervector[2]));
+        endEffector -= child;
+
+        endEffector = NewPoint(endEffector,.001,crossProductToUse);
+
+        endEffector += child;
 
         window.clear();
 
