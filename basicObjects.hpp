@@ -4,7 +4,6 @@
 #include <math.h>
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "math/quaternion.h"
 
 
 class coord
@@ -28,6 +27,9 @@ public:
     Vector3(float tX, float tY, float tZ){x=tX;y=tY;z=tZ;}
     Vector3(){}
 
+    std::vector<double> convertTostdVec(){std::vector<double> temp;temp.push_back(x);temp.push_back(y);temp.push_back(z);return temp;}
+    void convertstdVecToVec3(std::vector<double> temp){x = temp[0];y = temp[1];z = temp[2];}
+
     bool operator == (Vector3 t){return t.x == x and t.y == y and t.z == z;}
     bool operator != (Vector3 t){return !(t == *this);}
 };
@@ -46,8 +48,10 @@ class Cube
 {
 public:
     std::vector<Vert> points;
-    Cube();
+    Cube(int x, int y, int z);
 };
+
+Vector3 crossProduct(Vector3 parent, Vector3 child);
 
 std::vector<Vector3> cube();
 

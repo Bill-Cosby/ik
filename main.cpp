@@ -62,9 +62,9 @@ int main()
             text.setCharacterSize(10);
 
     vector<double> eulervector;
-    eulervector.push_back(1000000);
-    eulervector.push_back(100000);
-    eulervector.push_back(9);
+    eulervector.push_back(1);
+    eulervector.push_back(2);
+    eulervector.push_back(0);
 
 
     sf::CircleShape circ;
@@ -74,7 +74,12 @@ int main()
     float counter = 0;
     bool increasing = true;
 
-    Cube test;
+    std::vector<Cube> cubes;
+    cubes.push_back(Cube(0,0,0));
+
+    Vector3 parent(1,1,0);
+    Vector3 child(1,2,0);
+    Vector3 endEffector(1,3,0);
 
     while (window.isOpen()){
         if (increasing)counter+=.01;
@@ -89,50 +94,79 @@ int main()
                 window.close();
             }
         }
-        std::cout << (double)((rand()%100)) << std::endl;
-
-
-        for (Vert &point : test.points){
-
-            std::vector<double> temp;
-                temp.push_back(point.pos.x);
-                temp.push_back(point.pos.y);
-                temp.push_back(point.pos.z);
-            std::vector<double> thisIsInefficient = NewPoint(temp,.0001,eulervector);
-            point.pos.x = thisIsInefficient[0];
-            point.pos.y = thisIsInefficient[1];
-            point.pos.z = thisIsInefficient[2];
-        }
-
-        window.clear(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(sf::Color(rand()%255,rand()%255,rand()%255,rand()%255)))))))))))))))))))))));
-
-
-        for (Vert point : test.points){
-
-            for (Vert *Point : point.connectedTo){
-                sf::Vertex line[] =
-                {
-                    sf::Vertex(sf::Vector2f(point.pos.x*100+100, point.pos.y*100+100)),
-                    sf::Vertex(sf::Vector2f(Point->pos.x*100+100, Point->pos.y*100+100))
-                };
-
-                window.draw(line, 2, sf::Lines);
-            }
-
-//            sf::CircleShape circ;
-//            circ.setRadius(2);
-//            circ.setPosition(point.pos.x*100+100,point.pos.y*100+100);
+/////////////////////ROTATE CUBES///////////////////////////////////
+//        for (Cube &test : cubes){
+//            for (Vert &point : test.points){
 //
+//                std::vector<double> temp;
+//                    temp.push_back(point.pos.x);
+//                    temp.push_back(point.pos.y);
+//                    temp.push_back(point.pos.z);
+//                std::vector<double> thisIsInefficient = NewPoint(temp,.0001,eulervector);
+//                point.pos.x = thisIsInefficient[0];
+//                point.pos.y = thisIsInefficient[1];
+//                point.pos.z = thisIsInefficient[2];
 //
+//            }
+//        }
+////////////////////////////////////////////////////////////////////
+
+        //endEffector.convertstdVecToVec3(NewPoint(endEffector.convertTostdVec(),1,crossProduct(parent,child).convertTostdVec()));
+
+//                std::vector<double> temp;
+//                    temp.push_back(endEffector.x);
+//                    temp.push_back(endEffector.y);
+//                    temp.push_back(endEffector.z);
 //
-//            circ.setFillColor(sf::Color::White);
-//            window.draw(circ);
-        }
+//        std::vector<double> newestPoint = NewPoint(temp,.0001,eulervector);
+//
+//        endEffector.x = newestPoint[0];
+//        endEffector.y = newestPoint[1];
+//        endEffector.z = newestPoint[2];
 
-        //circ.setRadius(100/distToCircle);
+        Vector3 crossProductToUse = crossProduct(parent,child);
+
+        std::cout << crossProductToUse.x << "," << crossProductToUse.y << "," << crossProductToUse.z << std::endl;
+
+        endEffector = NewPoint(endEffector,.0001,Vector3(eulervector[0],eulervector[1],eulervector[2]));
+
+        window.clear();
+
+        sf::Vertex line[] = {
+
+            sf::Vertex(sf::Vector2f(parent.x*100+200,parent.y*100+200)),
+            sf::Vertex(sf::Vector2f(child.x*100+200,child.y*100+200))
+
+        };
 
 
+        window.draw(line,2, sf::Lines);
 
+        sf::Vertex line2[] = {
+
+            sf::Vertex(sf::Vector2f(child.x*100+200,child.y*100+200)),
+            sf::Vertex(sf::Vector2f(endEffector.x*100+200,endEffector.y*100+200))
+
+        };
+
+        window.draw(line2,2, sf::Lines);
+
+///////////////DRAW CUBES///////////////////////////////////////////
+//        for (Cube test : cubes){
+//            for (Vert point : test.points){
+//
+//                for (Vert *Point : point.connectedTo){
+//                    sf::Vertex line[] =
+//                    {
+//                        sf::Vertex(sf::Vector2f(point.pos.x*100+100, point.pos.y*100+100)),
+//                        sf::Vertex(sf::Vector2f(Point->pos.x*100+100, Point->pos.y*100+100))
+//                    };
+//
+//                    window.draw(line, 2, sf::Lines);
+//                }
+//            }
+//        }
+////////////////////////////////////////////////////////////////////
 
         window.display();
 

@@ -19,6 +19,15 @@ coord coord::setRotatedPos(coord par, float ang, float dist, bool inradians)
     y = _y;
 }
 
+Vector3 crossProduct(Vector3 parent, Vector3 child)
+{
+    Vector3 newVec;
+    newVec.x = (child.y * parent.z - child.z * parent.y) + child.x;
+    newVec.y = (child.z * parent.x - child.x * parent.z) + child.y;
+    newVec.z = (child.x * parent.y - child.y * parent.x) + child.z;
+    return newVec;
+}
+
 float getDistance(coord p1, coord p2)
 {
     float temp = sqrt(pow(p2.x-p1.x,2)+pow(p2.y-p1.y,2));
@@ -44,23 +53,23 @@ std::vector<Vector3> cube()
     return temp;
 }
 
-Cube::Cube()
+Cube::Cube(int x, int y, int z)
 {
-    points.push_back(Vert(0,0,0));
+    points.push_back(Vert(x+0,y+0,z+0));
     points[0].id = "0";
-    points.push_back(Vert(1,0,0));
+    points.push_back(Vert(x+1,y+0,z+0));
     points[1].id = "1";
-    points.push_back(Vert(1,0,1));
+    points.push_back(Vert(x+1,y+0,z+1));
     points[2].id = "2";
-    points.push_back(Vert(0,0,1));
+    points.push_back(Vert(x+0,y+0,z+1));
     points[3].id = "3";
-    points.push_back(Vert(0,1,0));
+    points.push_back(Vert(x+0,y+1,z+0));
     points[4].id = "4";
-    points.push_back(Vert(1,1,0));
+    points.push_back(Vert(x+1,y+1,z+0));
     points[5].id = "5";
-    points.push_back(Vert(1,1,1));
+    points.push_back(Vert(x+1,y+1,z+1));
     points[6].id = "6";
-    points.push_back(Vert(0,1,1));
+    points.push_back(Vert(x+0,y+1,z+1));
     points[7].id = "7";
 
     points[0].connectedTo.push_back(&points[1]);

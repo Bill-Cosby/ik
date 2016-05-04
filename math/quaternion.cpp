@@ -33,13 +33,14 @@ Quaternion p(double theta, Quaternion eulerVector)
     return q;
 }
 
-vector<double> NewPoint(vector<double> mypoint, double theta, vector<double> eulervector)
+Vector3 NewPoint(Vector3 mypoint, double theta, Vector3 eulervector)
 {
+
     Quaternion eulerVector;
     eulerVector.a=0;
-    eulerVector.x=eulervector[0];
-    eulerVector.y=eulervector[1];
-    eulerVector.z=eulervector[2];
+    eulerVector.x=eulervector.x;
+    eulerVector.y=eulervector.y;
+    eulerVector.z=eulervector.z;
     double eulerLength=pow(pow(eulerVector.x,2)+pow(eulerVector.y,2)+pow(eulerVector.z,2),0.5);
 
     eulerVector.x=eulerVector.x/eulerLength;
@@ -48,21 +49,19 @@ vector<double> NewPoint(vector<double> mypoint, double theta, vector<double> eul
 
     Quaternion myPoint;
     myPoint.a=0;
-    myPoint.x=mypoint[0];
-    myPoint.y=mypoint[1];
-    myPoint.z=mypoint[2];
+    myPoint.x=mypoint.x;
+    myPoint.y=mypoint.y;
+    myPoint.z=mypoint.z;
 
 
     Quaternion q=p(theta, eulerVector);
     Quaternion newPoint;
     newPoint=product(q,product(myPoint,unitInverse(q)));
-    vector<double> newpoint;
-    newpoint.push_back(newPoint.x);
-    newpoint.push_back(newPoint.y);
-    newpoint.push_back(newPoint.z);
+    Vector3 newpoint;
+    newpoint.x = newPoint.x;
+    newpoint.y = newPoint.y;
+    newpoint.z = newPoint.z;
     return newpoint;
-
-
 
 }
 
