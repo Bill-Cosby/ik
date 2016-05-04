@@ -3,23 +3,23 @@
 
 #include "math/quaternion.h"
 
-class node
+class Node
 {
 
-    node* parent = nullptr;
+    Node* parent = nullptr;
 
     float minAngle = 0;
     float maxAngle = 0;
     float distanceFromParent = 0;
 public:
-    node* child = nullptr;
+    Node* child = nullptr;
     float currentAngle = 0;
-    Vector3 POS;
-    node(Vector3 pos, float mini, float maxi);
-    node(node* parent, float mini, float maxi, float dist);
-    void update(sf::RenderWindow &window,coord goal);
-    void update(sf::RenderWindow &window);
-    void calculateNewAngle(coord target);
+    Vector3<float> POS;
+    Node(Vector3<float> pos, float mini, float maxi);
+    Node(Node* parent, float mini, float maxi, float dist);
+    void calculateNewAngle(Vector3<float> target);
+
+    inline void verticalRotation(float theta);
 };
 
 

@@ -13,4 +13,4 @@ Quaternion unitInverse (Quaternion u);
 
 Quaternion p(double theta, Quaternion eulerVector);
 
-Vector3 NewPoint(Vector3 mypoint, double theta, Vector3 eulervector);
+Vector3<float> NewPoint(Vector3<float> mypoint, double theta, Vector3<float> eulervector);

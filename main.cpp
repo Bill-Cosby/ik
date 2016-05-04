@@ -77,9 +77,9 @@ int main()
     std::vector<Cube> cubes;
     cubes.push_back(Cube(0,0,0));
 
-    Vector3 parent(1,1,0);
-    Vector3 child(1,2,0);
-    Vector3 endEffector(1,3,0);
+    Vector3<float> parent(1,1,0);
+    Vector3<float> child(1,2,0);
+    Vector3<float> endEffector(1,3,0);
 
     while (window.isOpen()){
         if (increasing)counter+=.01;
@@ -124,8 +124,11 @@ int main()
 //        endEffector.y = newestPoint[1];
 //        endEffector.z = newestPoint[2];
 
-        Vector3 crossProductToUse = crossProduct(parent,child);
+        Vector3<float> crossProductToUse = crossProduct(parent,child);
 
+        parent = NewPoint(parent,.001,Vector3<float>(0,1,0));
+        child = NewPoint(child,.001,Vector3<float>(0,1,0));
+        endEffector = NewPoint(endEffector,.001,Vector3<float>(0,1,0));
         std::cout << crossProductToUse.x << "," << crossProductToUse.y << "," << crossProductToUse.z << std::endl;
 
         endEffector -= child;
@@ -133,6 +136,7 @@ int main()
         endEffector = NewPoint(endEffector,.001,crossProductToUse);
 
         endEffector += child;
+
 
         window.clear();
 

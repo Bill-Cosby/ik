@@ -33,7 +33,7 @@ Quaternion p(double theta, Quaternion eulerVector)
     return q;
 }
 
-Vector3 NewPoint(Vector3 mypoint, double theta, Vector3 eulervector)
+Vector3<float> NewPoint(Vector3<float> mypoint, double theta, Vector3<float> eulervector)
 {
 
     Quaternion eulerVector;
@@ -57,7 +57,7 @@ Vector3 NewPoint(Vector3 mypoint, double theta, Vector3 eulervector)
     Quaternion q=p(theta, eulerVector);
     Quaternion newPoint;
     newPoint=product(q,product(myPoint,unitInverse(q)));
-    Vector3 newpoint;
+    Vector3<float> newpoint;
     newpoint.x = newPoint.x;
     newpoint.y = newPoint.y;
     newpoint.z = newPoint.z;

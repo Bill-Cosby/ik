@@ -2,15 +2,30 @@
 #define BODYSTRUCTURE_HPP_INCLUDED
 #include "node.hpp"
 
+class Limb
+{
+public:
+    std::vector<Node> joints;
+    Vector3<float> POS;
+    Limb(Vector3<float> tPOS){POS = tPOS;}
+};
+
+class Leg : public Limb
+{
+    Node* PARENT;
+public:
+    Leg(Node* Parent);
+};
+
 class BODY_STRUCTURE
 {
 private:
-    std::vector<node*> joints;
-    coord POS;
+    std::vector<Node*> joints;
+    Vector3<float> POS;
 public:
-    BODY_STRUCTURE(coord pos);
+    BODY_STRUCTURE(Vector3<float> pos);
 
-    void update(sf::RenderWindow &window,coord goal);
+    void update(sf::RenderWindow &window,Vector3<float> goal);
 };
 
 #endif // BODYSTRUCTURE_HPP_INCLUDED

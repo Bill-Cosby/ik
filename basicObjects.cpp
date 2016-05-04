@@ -19,9 +19,9 @@ coord coord::setRotatedPos(coord par, float ang, float dist, bool inradians)
     y = _y;
 }
 
-Vector3 crossProduct(Vector3 parent, Vector3 child)
+Vector3<float> crossProduct(Vector3<float> parent, Vector3<float> child)
 {
-    Vector3 newVec;
+    Vector3<float> newVec;
     newVec.x = (child.y * parent.z - child.z * parent.y);
     newVec.y = (child.z * parent.x - child.x * parent.z);
     newVec.z = (child.x * parent.y - child.y * parent.x);
@@ -37,20 +37,6 @@ float getDistance(coord p1, coord p2)
 float getTheta(coord p1, coord p2)
 {
     return atan2((p1.y-p2.y),(p1.x-p2.x));
-}
-
-std::vector<Vector3> cube()
-{
-    std::vector<Vector3> temp;
-    temp.push_back(Vector3(0,0,0));
-    temp.push_back(Vector3(1,0,0));
-    temp.push_back(Vector3(1,0,1));
-    temp.push_back(Vector3(0,0,1));
-    temp.push_back(Vector3(0,1,0));
-    temp.push_back(Vector3(1,1,0));
-    temp.push_back(Vector3(1,1,1));
-    temp.push_back(Vector3(0,1,1));
-    return temp;
 }
 
 Cube::Cube(int x, int y, int z)
