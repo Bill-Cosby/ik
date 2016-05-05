@@ -1,7 +1,7 @@
 #ifndef NODE_HPP_INCLUDED
 #define NODE_HPP_INCLUDED
 
-#include "math/quaternion.h"
+#include <quaternion.h>
 
 class Node
 {

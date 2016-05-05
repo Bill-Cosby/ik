@@ -1,4 +1,4 @@
-#include "bodyStructure.hpp"
+#include <bodyStructure.hpp>
 
 BODY_STRUCTURE::BODY_STRUCTURE(Vector3<float> pos)
 {

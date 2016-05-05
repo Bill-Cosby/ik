@@ -1,6 +1,6 @@
 #ifndef BODYSTRUCTURE_HPP_INCLUDED
 #define BODYSTRUCTURE_HPP_INCLUDED
-#include "node.hpp"
+#include <node.hpp>
 
 class Limb
 {

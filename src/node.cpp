@@ -1,4 +1,4 @@
-#include "node.hpp"
+#include <node.hpp>
 
 Node::Node(Vector3<float> pos, float mini, float maxi)
 {

@@ -1,6 +1,6 @@
 #include <math.h>
 #include <vector>
-#include "../basicObjects.hpp"
+#include <basicObjects.hpp>
 
 struct Quaternion
 {

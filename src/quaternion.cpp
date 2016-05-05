@@ -1,5 +1,5 @@
 #include <iostream>
-#include "quaternion.h"
+#include <quaternion.h>
 
 using namespace std;
 

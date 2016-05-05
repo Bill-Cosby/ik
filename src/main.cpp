@@ -1,4 +1,4 @@
-#include "bodyStructure.hpp"
+#include <bodyStructure.hpp>
 
 using namespace std;
 
@@ -53,13 +53,6 @@ int main()
 //    test.push_back(400);
 //    test.push_back(200);
 //    test.push_back(0);
-
-
-            sf::Font font;
-            font.loadFromFile("PressStart2P-Regular.ttf");
-            sf::Text text;
-            text.setFont(font);
-            text.setCharacterSize(10);
 
     vector<double> eulervector;
     eulervector.push_back(1);
